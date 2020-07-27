@@ -1,5 +1,5 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import Home from './screens/Home'
+import { Home } from './screens'
 
 import firebase from "firebase";
 
