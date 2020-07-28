@@ -1,5 +1,5 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { Home } from './screens'
+import { Home, Detail } from './screens'
 
 import firebase from "firebase";
 
@@ -15,10 +15,10 @@ import firebase from "firebase";
 export default createAppContainer(
   createSwitchNavigator(
     {
-      Home: Home,
+      Home: Detail,
     },
     {
-      initialRouteName: "Home",
+      initialRouteName: 'Home',
     }
   )
 );

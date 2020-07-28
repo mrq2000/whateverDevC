@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'react-native-elements';
-import { Icon } from 'react-native-elements';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Image, Icon } from 'react-native-elements';
+import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const iconColor = '#1890ff';
 const Card = () => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Image
         source={{
           uri:
@@ -17,13 +17,32 @@ const Card = () => {
       />
 
       <View style={styles.textContainer}>
-        <Text style={{ fontStyle: 'italic', color: '#bfbfbf' }}>
-          Ngày đăng: 19/02/2020
-        </Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text style={{ color: '#bfbfbf', fontSize: RFPercentage(2) }}>
+            Ngày đăng: 19/02/2020
+          </Text>
 
-        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>
-          Tin tuc viet asda asd asd asd ad asd asdnmamns a da s asd asd asd asa
-          sdas asd as as asd
+          <TouchableOpacity>
+            <Icon
+              name="heart-o"
+              type="font-awesome"
+              color="#f759ab"
+              size={RFPercentage(2)}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <Text
+          style={{
+            fontWeight: 'bold',
+            fontSize: RFPercentage(2),
+            fontFamily: 'main',
+          }}
+          numberOfLines={3}
+          ellipsizeMode="tail"
+        >
+          Tin tuc viet asda asd asd asd ad asd asdnmamns dasd s s asd asd asd
+          asa sdas asd as as asd dsad ad as asd ad asd as da
         </Text>
 
         <View
@@ -34,22 +53,37 @@ const Card = () => {
           }}
         >
           <View style={styles.icon}>
-            <Icon name="thumbs-o-up" type="font-awesome" color={iconColor} />
+            <Icon
+              name="thumbs-o-up"
+              type="font-awesome"
+              color={iconColor}
+              size={RFPercentage(2.5)}
+            />
             <Text style={styles.textIcon}>1233</Text>
           </View>
 
           <View style={styles.icon}>
-            <Icon name="comment-o" type="font-awesome" color={iconColor} />
+            <Icon
+              name="comment-o"
+              type="font-awesome"
+              color={iconColor}
+              size={RFPercentage(2.5)}
+            />
             <Text style={styles.textIcon}>123</Text>
           </View>
 
           <View style={styles.icon}>
-            <Icon name="share" type="font-awesome" color={iconColor} />
+            <Icon
+              name="share"
+              type="font-awesome"
+              color={iconColor}
+              size={RFPercentage(2.5)}
+            />
             <Text style={styles.textIcon}>12</Text>
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -62,8 +96,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   img: {
-    width: 100,
-    height: 100,
+    width: RFPercentage(15),
+    height: RFPercentage(15),
     borderRadius: 10,
   },
   textContainer: {
@@ -79,7 +113,7 @@ const styles = StyleSheet.create({
   textIcon: {
     color: iconColor,
     marginLeft: 3,
-    fontStyle: 'italic',
+    fontSize: RFPercentage(1.5),
   },
 });
 
