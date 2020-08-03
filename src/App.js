@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
@@ -9,6 +8,7 @@ import Navigator from './AppNavigation';
 const getFont = () =>
   Font.loadAsync({
     main: require('./assets/fonts/main.ttf'),
+    main2: require('./assets/fonts/main2.ttf'),
   });
 
 export default function App() {
@@ -23,18 +23,9 @@ export default function App() {
     );
   }
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar hidden />
       <Navigator />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f0f0',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

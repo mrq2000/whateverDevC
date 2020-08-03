@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PieChart } from 'react-native-chart-kit';
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect from 'react-native-picker-select'
+
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { Button } from 'react-native-elements';
 
@@ -10,17 +11,7 @@ const H = Dimensions.get('window').height;
 
 const Detail = () => {
   return (
-    <View style={{ width: W * 0.9, flex: 1 }}>
-      <Text
-        style={{
-          fontSize: 24,
-          fontWeight: 'bold',
-          fontFamily: 'main',
-          textAlign: 'center',
-        }}
-      >
-        Over View
-      </Text>
+    <View style={{ width: W * 0.9, flex: 1, alignSelf: 'center' }}>
       <View style={{ marginTop: 10 }}>
         <Card />
       </View>
