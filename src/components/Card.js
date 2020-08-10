@@ -4,7 +4,7 @@ import { Image, Icon } from 'react-native-elements';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const iconColor = '#1890ff';
-const Card = () => {
+const Card = ({ data }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <Image
@@ -35,14 +35,13 @@ const Card = () => {
         <Text
           style={{
             fontWeight: 'bold',
-            fontSize: RFPercentage(2),
+            fontSize: RFPercentage(1.65),
             fontFamily: 'main',
           }}
-          numberOfLines={3}
+          numberOfLines={5}
           ellipsizeMode="tail"
         >
-          Tin tuc viet asda asd asd asd ad asd asdnmamns dasd s s asd asd asd
-          asa sdas asd as as asd dsad ad as asd ad asd as da
+          {data.content}
         </Text>
 
         <View
@@ -59,7 +58,7 @@ const Card = () => {
               color={iconColor}
               size={RFPercentage(2.5)}
             />
-            <Text style={styles.textIcon}>1233</Text>
+            <Text style={styles.textIcon}>{data.like}</Text>
           </View>
 
           <View style={styles.icon}>
@@ -69,7 +68,7 @@ const Card = () => {
               color={iconColor}
               size={RFPercentage(2.5)}
             />
-            <Text style={styles.textIcon}>123</Text>
+            <Text style={styles.textIcon}>{data.comment}</Text>
           </View>
 
           <View style={styles.icon}>
@@ -79,7 +78,7 @@ const Card = () => {
               color={iconColor}
               size={RFPercentage(2.5)}
             />
-            <Text style={styles.textIcon}>12</Text>
+            <Text style={styles.textIcon}>{data.share}</Text>
           </View>
         </View>
       </View>
@@ -104,7 +103,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flexWrap: 'nowrap',
     flex: 1,
-    marginTop: 5,
   },
   icon: {
     flexDirection: 'row',
